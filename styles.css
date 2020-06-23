@@ -28,6 +28,7 @@ nav ul {
 ul.top-nav li {
     list-style: none;
     float: left;
+    font-family: Bahnschrift;
 }
 
 ul.top-nav li.top-nav-right {
@@ -48,4 +49,44 @@ ul.top-nav li a {
 ul.top-nav li a:hover {
     background-color: #a80000;
     color: #fff;
+}
+
+ul.top-nav li.dropdown {
+    display: none;
+}
+
+#navBarElements {
+
+}
+
+/*For mobile users*/
+@media screen and (max-width: 680px) {
+    ul.top-nav li:not(:nth-child(1)) {
+        display: none;
+    }
+
+    ul.top-nav li.dropdown {
+        display: block;
+        float: right;
+    }
+
+    ul.top-nav.click li.dropdown {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    ul.top-nav.click {
+        position: relative;
+    }
+
+    ul.top-nav.click li {
+        display: inline;
+        float: none;
+    }
+
+    ul.top-nav.click li a {
+        display: block;
+        text-align: left;
+    }
 }

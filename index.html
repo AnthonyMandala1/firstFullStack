@@ -8,12 +8,13 @@
 
     <body>
         <nav>
-            <ul class="top-nav">
+            <ul class="top-nav" id="navBarElements">
                <li><a href="#home"> Home </a> </li>
                 <li><a href="#contact"> Contact </a> </li>
                 <li><a href="#about"> About </a> </li>
                 <li class="top-nav-right"><a href="#signup"> Sign Up </a> </li>
                 <li class="top-nav-right"><a href="#signin"> Sign In </a> </li>
+                <li class="dropdown"><a href="javascript:void(0);" onclick="navBarMenu()">&#9776;</a></li>
             </ul>
         </nav>
 
@@ -38,3 +39,14 @@
     </body>
 
 </html>
+
+<script>
+    function navBarMenu() {
+        var id = document.getElementById("navBarElements");
+        if(id.className === "top-nav") {
+            id.className += " click";
+        } else {
+            id.className = "top-nav";
+        }
+    }
+</script>
