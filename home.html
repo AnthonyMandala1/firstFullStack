@@ -4,6 +4,7 @@
     <head>
         <title>My test website</title>
         <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="navBar.js"></script>
     </head>
 
     <body>
@@ -27,12 +28,14 @@
                         <h1 class="large">For my first full-stack</h1>
                     </div>
                 </div>
-                <form>
+                <form id="submitData">
                     <div>
                         Username: <br>
-                        <input class="inputbox" type="text" placeholder="Username"> <br>
+                        <input class="inputbox" type="text" id="usernameField" placeholder="Username"> <br>
                         Password: <br>
-                        <input class="inputbox" type="password" placeholder="Password"> <br>
+                        <input class="inputbox" type="password" id="passwordField" placeholder="Password"> <br><br>
+                        <input type="submit" value="Sign In"></input>
+                        <script type="text/javascript" src="form.js"></script>
                     </div>
                 </form>
                 <div class="col-6">
@@ -55,10 +58,10 @@
                 <div class="col-3">
                     <h1>Site Map</h1>
                     <ul>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Sign Up</li>
-                        <li>Sign In</li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#signup">Sign Up</a></li>
+                        <li><a href="#signin">Sign In</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,13 +71,15 @@
 
 </html>
 
-<script>
-    function navBarMenu() {
-        var id = document.getElementById("navBarElements");
-        if(id.className === "top-nav") {
-            id.className += " click";
-        } else {
-            id.className = "top-nav";
-        }
-    }
-</script>
+
+
+<!--<script>-->
+<!--    function navBarMenu() {-->
+<!--        var id = document.getElementById("navBarElements");-->
+<!--        if(id.className === "top-nav") {-->
+<!--            id.className += " click";-->
+<!--        } else {-->
+<!--            id.className = "top-nav";-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
