@@ -1,16 +1,29 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/fullStack', (req, res, next) => {
-
+//get users
+router.get('/users', function (req, res) {
+    res.send({type:'GET'});
 });
 
-router.post('/fullStack', (req, res, next) => {
-
+//add user
+router.post('/users', function (req, res) {
+    console.log(req.body);
+    res.send({
+        type:'POST',
+        name: req.body.name
+    });
 });
 
-router.delete('/fullStack', (req, res, next) => {
-
+//update user
+router.put('/users/:id', function (req, res) {
+    res.send({type:'PUT'});
 });
+
+//delete user
+router.delete('/users/:id', function (req, res) {
+    res.send({type:'DELETE'});
+});
+
 
 module.exports = router;
