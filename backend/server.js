@@ -1,23 +1,29 @@
 const express = require('express');
 const routes = require('./routes/api');
 const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
 require('dotenv').config();
 
 const app = express();
 
-app.use(bodyparser.json());
+//db connect
+mongoose.connect(process.env.DB, {useNewUrlParser: true})
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
+mongoose.Promise = global.Promise;
+
+
+app.use(bodyParser.json());
 
 app.use('/api', routes);
 
-//db connect
-/*mongoose.connect(process.env.DB, {useNewUrlParser: true})
-    .then(() => console.log('DB connected'))
-    .catch(err => console.log(err));
-
-mongoose.Promise = global.Promise;*/
+//error check
+app.use(function(err, req, res, next) {
+   console.log(err);
+   res.status(422).send({error: err.message});
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
