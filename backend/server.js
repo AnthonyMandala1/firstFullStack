@@ -14,6 +14,11 @@ mongoose.connect(process.env.DB, {useNewUrlParser: true})
     .catch(err => console.log(err));
 mongoose.Promise = global.Promise;
 
+app.use(express.static(__dirname + '/../frontend'));
+
+app.get('/', function (req, res) {
+   res.sendFile('home.html', { root: __dirname + "/../frontend"});
+});
 
 app.use(bodyParser.json());
 

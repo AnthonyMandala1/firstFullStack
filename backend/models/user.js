@@ -11,6 +11,12 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Email required"]
     },
+    /*carMake: {
+      type: String
+    },
+    carModel: {
+        type: String
+    },*/
     available: {
         type: Boolean,
         default: false
